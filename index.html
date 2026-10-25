@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f8f4" />
+    <title>Wanderwise — Your travel planning companion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar" aria-label="Travel planner">
+        <a class="brand" href="#" aria-label="Wanderwise home">
+          <span class="brand-mark" aria-hidden="true">✳</span>
+          <span>wanderwise</span>
+        </a>
+
+        <button class="new-trip-button" id="new-trip-button" type="button">
+          <span aria-hidden="true">＋</span>
+          Plan a new trip
+        </button>
+
+        <div class="sidebar-section">
+          <p class="sidebar-label">YOUR PLANNER</p>
+          <button class="nav-item active" type="button">
+            <span aria-hidden="true">◉</span>
+            Trip assistant
+          </button>
+          <button class="nav-item" id="inspiration-button" type="button">
+            <span aria-hidden="true">✧</span>
+            Find inspiration
+          </button>
+        </div>
+
+        <div class="sidebar-tip">
+          <span class="tip-icon" aria-hidden="true">✦</span>
+          <p class="tip-title">A little travel tip</p>
+          <p>Leave some room in your itinerary for the unexpected. Those are often the best moments.</p>
+        </div>
+
+        <div class="sidebar-footer">
+          <span class="avatar" aria-hidden="true">W</span>
+          <span><strong>Your travel buddy</strong><small>Ready when you are</small></span>
+          <span class="online-dot" aria-label="Online"></span>
+        </div>
+      </aside>
+
+      <section class="chat-panel" aria-label="Travel planning chat">
+        <header class="topbar">
+          <div class="assistant-identity">
+            <span class="assistant-avatar" aria-hidden="true">✳</span>
+            <span><strong>Wanderwise</strong><small><span class="online-dot"></span> Your personal travel planner</small></span>
+          </div>
+          <button class="icon-button" id="clear-chat-button" type="button" aria-label="Start a new conversation" title="Start a new conversation">
+            ↻
+          </button>
+        </header>
+
+        <div class="conversation" id="conversation" aria-live="polite" aria-relevant="additions">
+          <div class="welcome-block">
+            <p class="eyebrow"><span>✦</span> YOUR NEXT ADVENTURE STARTS HERE</p>
+            <h1>Where would you<br />like to <span>go?</span></h1>
+            <p class="welcome-copy">Tell me what you're dreaming of and I'll help you turn it into a trip to remember.</p>
+          </div>
+
+          <div class="messages" id="messages">
+            <article class="message assistant-message">
+              <span class="message-avatar" aria-hidden="true">✳</span>
+              <div class="message-content">
+                <p>Hi there! I'm your travel planning buddy. 🌿</p>
+                <p>Share a destination, how long you have, or the kind of trip you're dreaming about. We can figure out the rest together.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="suggestions" id="suggestions" aria-label="Suggested prompts">
+            <p class="suggestion-label">NOT SURE WHERE TO START?</p>
+            <div class="suggestion-list">
+              <button class="suggestion-chip" type="button" data-prompt="Plan a 5-day trip to Kyoto">🍵 &nbsp;A 5-day Kyoto trip</button>
+              <button class="suggestion-chip" type="button" data-prompt="Suggest a relaxing beach getaway">🌊 &nbsp;A beach getaway</button>
+              <button class="suggestion-chip" type="button" data-prompt="I want a weekend adventure on a budget">🎒 &nbsp;A weekend on a budget</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="composer-area">
+          <form class="composer" id="chat-form">
+            <label class="sr-only" for="message-input">Describe your ideal trip</label>
+            <textarea id="message-input" name="message" rows="1" maxlength="1000" placeholder="Tell me about your dream trip..." required></textarea>
+            <button class="send-button" id="send-button" type="submit" aria-label="Send message">
+              <span aria-hidden="true">↑</span>
+            </button>
+          </form>
+          <p class="composer-note">Thoughtful trips, one message at a time <span>✦</span></p>
+        </div>
+      </section>
+
+      <aside class="trip-card" aria-label="Trip planning guide">
+        <div class="trip-card-heading">
+          <span class="eyebrow">THE GOOD STUFF</span>
+          <span class="sparkle" aria-hidden="true">✳</span>
+        </div>
+        <h2>Make it a trip<br />to <span>remember.</span></h2>
+        <p class="trip-card-copy">A few little details help us make a plan that feels like you.</p>
+
+        <div class="planning-list">
+          <div class="planning-step">
+            <span class="step-number">01</span>
+            <div><strong>Pick a place</strong><p>Or tell me the kind of vibe you're after.</p></div>
+          </div>
+          <div class="planning-step">
+            <span class="step-number">02</span>
+            <div><strong>Set your pace</strong><p>A long weekend or a grand adventure?</p></div>
+          </div>
+          <div class="planning-step">
+            <span class="step-number">03</span>
+            <div><strong>Make it yours</strong><p>Food, nature, culture — you choose.</p></div>
+          </div>
+        </div>
+
+        <div class="postcard" role="img" aria-label="Illustration of a mountain landscape at sunset">
+          <div class="sun"></div>
+          <div class="mountain mountain-back"></div>
+          <div class="mountain mountain-front"></div>
+          <span class="postcard-caption">GO WHERE YOU FEEL MOST ALIVE</span>
+        </div>
+        <p class="privacy-note"><span aria-hidden="true">♡</span> Messages are sent directly to Gemini.</p>
+      </aside>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
